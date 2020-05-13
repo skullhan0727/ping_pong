@@ -316,7 +316,7 @@ def ml_loop(side: str):
 
     # 2. Inform the game process that ml process is ready
     comm.ml_ready()
-    i=5
+    i=0
     block_x=85
 
     # 3. Start an endless loop
@@ -342,7 +342,7 @@ def ml_loop(side: str):
 
         # 3.3 Put the code here to handle the scene information
         # 3.4 Send the instruction for this frame to the game process
-        if not ball_served and i<5:
+        if i<150:
             comm.send_to_game({"frame": scene_info["frame"], "command": "MOVE_RIGHT"})
             i=i+1
         elif not ball_served and i==5:
