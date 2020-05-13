@@ -346,7 +346,7 @@ def ml_loop(side: str):
             comm.send_to_game({"frame": scene_info["frame"], "command": "MOVE_RIGHT"})
             i=i+1
         elif not ball_served and i==5:
-            comm.send_to_game({"frame": scene_info["frame"], "command": "SERVE_TO_LEFT"})
+            comm.send_to_game({"frame": scene_info["frame"], "command": "SERVE_TO_RIGHT"})
             ball_served = True   
          
         else:
